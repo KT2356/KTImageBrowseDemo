@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3BDC437BC0C9E662D0CAE88B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D484EE6D5BDBA967252176 /* libPods.a */; };
 		681345E31BAFFD9C00FF8887 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345E21BAFFD9C00FF8887 /* main.m */; };
 		681345E61BAFFD9C00FF8887 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345E51BAFFD9C00FF8887 /* AppDelegate.m */; };
 		681345E91BAFFD9C00FF8887 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345E81BAFFD9C00FF8887 /* ViewController.m */; };
@@ -14,6 +15,18 @@
 		681345EE1BAFFD9C00FF8887 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681345ED1BAFFD9C00FF8887 /* Images.xcassets */; };
 		681345F11BAFFD9C00FF8887 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681345EF1BAFFD9C00FF8887 /* LaunchScreen.xib */; };
 		681345FD1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345FC1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m */; };
+		6813461E1BAFFE2800FF8887 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 681346091BAFFE2800FF8887 /* 37x-Checkmark.png */; };
+		6813461F1BAFFE2800FF8887 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */; };
+		681346201BAFFE2800FF8887 /* appIcon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 6813460B1BAFFE2800FF8887 /* appIcon60.png */; };
+		681346211BAFFE2800FF8887 /* BrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460D1BAFFE2800FF8887 /* BrowseViewController.m */; };
+		681346221BAFFE2800FF8887 /* DownloadPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460F1BAFFE2800FF8887 /* DownloadPicViewController.m */; };
+		681346231BAFFE2800FF8887 /* ImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346111BAFFE2800FF8887 /* ImageData.m */; };
+		681346241BAFFE2800FF8887 /* ImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346131BAFFE2800FF8887 /* ImageModel.m */; };
+		681346251BAFFE2800FF8887 /* ImgScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346151BAFFE2800FF8887 /* ImgScrollView.m */; };
+		681346261BAFFE2800FF8887 /* KTImageBrowse.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346171BAFFE2800FF8887 /* KTImageBrowse.m */; };
+		681346271BAFFE2800FF8887 /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346191BAFFE2800FF8887 /* MaskView.m */; };
+		681346281BAFFE2800FF8887 /* ScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813461B1BAFFE2800FF8887 /* ScrollViewController.m */; };
+		681346291BAFFE2800FF8887 /* SmallImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813461D1BAFFE2800FF8887 /* SmallImage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5721FBF6652E6BA723CEF7F5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		681345DD1BAFFD9C00FF8887 /* KTImageBrowseDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KTImageBrowseDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		681345E11BAFFD9C00FF8887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681345E21BAFFD9C00FF8887 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +54,29 @@
 		681345F61BAFFD9C00FF8887 /* KTImageBrowseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTImageBrowseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		681345FB1BAFFD9C00FF8887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681345FC1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTImageBrowseDemoTests.m; sourceTree = "<group>"; };
+		681346091BAFFE2800FF8887 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
+		6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
+		6813460B1BAFFE2800FF8887 /* appIcon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon60.png; sourceTree = "<group>"; };
+		6813460C1BAFFE2800FF8887 /* BrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowseViewController.h; sourceTree = "<group>"; };
+		6813460D1BAFFE2800FF8887 /* BrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowseViewController.m; sourceTree = "<group>"; };
+		6813460E1BAFFE2800FF8887 /* DownloadPicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadPicViewController.h; sourceTree = "<group>"; };
+		6813460F1BAFFE2800FF8887 /* DownloadPicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadPicViewController.m; sourceTree = "<group>"; };
+		681346101BAFFE2800FF8887 /* ImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageData.h; sourceTree = "<group>"; };
+		681346111BAFFE2800FF8887 /* ImageData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageData.m; sourceTree = "<group>"; };
+		681346121BAFFE2800FF8887 /* ImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageModel.h; sourceTree = "<group>"; };
+		681346131BAFFE2800FF8887 /* ImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageModel.m; sourceTree = "<group>"; };
+		681346141BAFFE2800FF8887 /* ImgScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgScrollView.h; sourceTree = "<group>"; };
+		681346151BAFFE2800FF8887 /* ImgScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgScrollView.m; sourceTree = "<group>"; };
+		681346161BAFFE2800FF8887 /* KTImageBrowse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTImageBrowse.h; sourceTree = "<group>"; };
+		681346171BAFFE2800FF8887 /* KTImageBrowse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTImageBrowse.m; sourceTree = "<group>"; };
+		681346181BAFFE2800FF8887 /* MaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
+		681346191BAFFE2800FF8887 /* MaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
+		6813461A1BAFFE2800FF8887 /* ScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollViewController.h; sourceTree = "<group>"; };
+		6813461B1BAFFE2800FF8887 /* ScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollViewController.m; sourceTree = "<group>"; };
+		6813461C1BAFFE2800FF8887 /* SmallImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmallImage.h; sourceTree = "<group>"; };
+		6813461D1BAFFE2800FF8887 /* SmallImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmallImage.m; sourceTree = "<group>"; };
+		6C90FC0012A91827A711432B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F2D484EE6D5BDBA967252176 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BDC437BC0C9E662D0CAE88B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +98,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A7A32F85DB9F0150FA05880 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5721FBF6652E6BA723CEF7F5 /* Pods.debug.xcconfig */,
+				6C90FC0012A91827A711432B /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		681345D41BAFFD9C00FF8887 = {
 			isa = PBXGroup;
 			children = (
 				681345DF1BAFFD9C00FF8887 /* KTImageBrowseDemo */,
 				681345F91BAFFD9C00FF8887 /* KTImageBrowseDemoTests */,
 				681345DE1BAFFD9C00FF8887 /* Products */,
+				3A7A32F85DB9F0150FA05880 /* Pods */,
+				9EBE0E6A8CA42E7821061D38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +130,7 @@
 		681345DF1BAFFD9C00FF8887 /* KTImageBrowseDemo */ = {
 			isa = PBXGroup;
 			children = (
+				681346081BAFFE0F00FF8887 /* KTImageBrowse */,
 				681345E41BAFFD9C00FF8887 /* AppDelegate.h */,
 				681345E51BAFFD9C00FF8887 /* AppDelegate.m */,
 				681345E71BAFFD9C00FF8887 /* ViewController.h */,
@@ -119,6 +169,42 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		681346081BAFFE0F00FF8887 /* KTImageBrowse */ = {
+			isa = PBXGroup;
+			children = (
+				681346091BAFFE2800FF8887 /* 37x-Checkmark.png */,
+				6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */,
+				6813460B1BAFFE2800FF8887 /* appIcon60.png */,
+				6813460C1BAFFE2800FF8887 /* BrowseViewController.h */,
+				6813460D1BAFFE2800FF8887 /* BrowseViewController.m */,
+				6813460E1BAFFE2800FF8887 /* DownloadPicViewController.h */,
+				6813460F1BAFFE2800FF8887 /* DownloadPicViewController.m */,
+				681346101BAFFE2800FF8887 /* ImageData.h */,
+				681346111BAFFE2800FF8887 /* ImageData.m */,
+				681346121BAFFE2800FF8887 /* ImageModel.h */,
+				681346131BAFFE2800FF8887 /* ImageModel.m */,
+				681346141BAFFE2800FF8887 /* ImgScrollView.h */,
+				681346151BAFFE2800FF8887 /* ImgScrollView.m */,
+				681346161BAFFE2800FF8887 /* KTImageBrowse.h */,
+				681346171BAFFE2800FF8887 /* KTImageBrowse.m */,
+				681346181BAFFE2800FF8887 /* MaskView.h */,
+				681346191BAFFE2800FF8887 /* MaskView.m */,
+				6813461A1BAFFE2800FF8887 /* ScrollViewController.h */,
+				6813461B1BAFFE2800FF8887 /* ScrollViewController.m */,
+				6813461C1BAFFE2800FF8887 /* SmallImage.h */,
+				6813461D1BAFFE2800FF8887 /* SmallImage.m */,
+			);
+			name = KTImageBrowse;
+			sourceTree = "<group>";
+		};
+		9EBE0E6A8CA42E7821061D38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2D484EE6D5BDBA967252176 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +212,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 681346001BAFFD9C00FF8887 /* Build configuration list for PBXNativeTarget "KTImageBrowseDemo" */;
 			buildPhases = (
+				CE192AA87B01E97E1FAEECE3 /* Check Pods Manifest.lock */,
 				681345D91BAFFD9C00FF8887 /* Sources */,
 				681345DA1BAFFD9C00FF8887 /* Frameworks */,
 				681345DB1BAFFD9C00FF8887 /* Resources */,
+				3C56EBF80DC048CEDFB75678 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,8 +287,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681346201BAFFE2800FF8887 /* appIcon60.png in Resources */,
+				6813461E1BAFFE2800FF8887 /* 37x-Checkmark.png in Resources */,
 				681345EC1BAFFD9C00FF8887 /* Main.storyboard in Resources */,
 				681345F11BAFFD9C00FF8887 /* LaunchScreen.xib in Resources */,
+				6813461F1BAFFE2800FF8887 /* 37x-Checkmark@2x.png in Resources */,
 				681345EE1BAFFD9C00FF8887 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,14 +305,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C56EBF80DC048CEDFB75678 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE192AA87B01E97E1FAEECE3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		681345D91BAFFD9C00FF8887 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				681345E91BAFFD9C00FF8887 /* ViewController.m in Sources */,
+				681346251BAFFE2800FF8887 /* ImgScrollView.m in Sources */,
+				681346231BAFFE2800FF8887 /* ImageData.m in Sources */,
+				681346291BAFFE2800FF8887 /* SmallImage.m in Sources */,
+				681346241BAFFE2800FF8887 /* ImageModel.m in Sources */,
+				681346281BAFFE2800FF8887 /* ScrollViewController.m in Sources */,
+				681346271BAFFE2800FF8887 /* MaskView.m in Sources */,
 				681345E61BAFFD9C00FF8887 /* AppDelegate.m in Sources */,
+				681346211BAFFE2800FF8887 /* BrowseViewController.m in Sources */,
 				681345E31BAFFD9C00FF8887 /* main.m in Sources */,
+				681346221BAFFE2800FF8887 /* DownloadPicViewController.m in Sources */,
+				681346261BAFFE2800FF8887 /* KTImageBrowse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +478,7 @@
 		};
 		681346011BAFFD9C00FF8887 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5721FBF6652E6BA723CEF7F5 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KTImageBrowseDemo/Info.plist;
@@ -355,6 +489,7 @@
 		};
 		681346021BAFFD9C00FF8887 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C90FC0012A91827A711432B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = KTImageBrowseDemo/Info.plist;
@@ -416,6 +551,7 @@
 				681346021BAFFD9C00FF8887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		681346031BAFFD9C00FF8887 /* Build configuration list for PBXNativeTarget "KTImageBrowseDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +560,7 @@
 				681346051BAFFD9C00FF8887 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
