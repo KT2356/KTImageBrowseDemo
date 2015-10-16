@@ -36,7 +36,12 @@
 
 
 #pragma mark - public methods
-//不带菊花下载图片
+/**
+ *  不带菊花下载图片
+ *
+ *  @param urlString 图片URL
+ *  @param block     finish block
+ */
 - (void)downloadPicWithURLSting:(NSString *)urlString
                     finishBlock:(FinishBlick)block
 {
@@ -46,7 +51,12 @@
     [connection start];
 }
 
-//带菊花下载图片
+/**
+ *  带菊花下载图片
+ *
+ *  @param urlString 图片URL
+ *  @param block     finish block
+ */
 - (void)downloadPicWithURLStingWithProgress:(NSString *)urlString
                                 finishBlock:(FinishBlick)block
 
@@ -99,7 +109,9 @@
 
 
 #pragma mark -private methods
-//关闭菊花
+/**
+ *  关闭菊花
+ */
 - (void)turnOffHUD{
     _HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
     _HUD.mode = MBProgressHUDModeCustomView;
@@ -108,7 +120,9 @@
   
 }
 
-//关闭定时器
+/**
+ *  关闭定时器
+ */
 - (void)stopTimmer {
     [_mytimer invalidate];
     _mytimer=nil;

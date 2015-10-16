@@ -13,11 +13,21 @@ typedef void (^FinishBlick)(NSData *resultData);
 
 @interface KTDownloadPicViewController : UIViewController
 @property (nonatomic, copy) FinishBlick finishBlock;
-
+/**
+ *  不带菊花下载图片
+ *
+ *  @param urlString 图片URL
+ *  @param block     finish block
+ */
 - (void)downloadPicWithURLSting:(NSString *)urlString
                     finishBlock:(FinishBlick)block;
 
-
+/**
+ *  带菊花下载图片
+ *
+ *  @param urlString 图片URL
+ *  @param block     finish block
+ */
 - (void)downloadPicWithURLStingWithProgress:(NSString *)urlString
                                 finishBlock:(FinishBlick)block;
 @end

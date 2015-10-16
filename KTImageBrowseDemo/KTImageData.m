@@ -11,7 +11,11 @@
 
 @implementation KTImageData
 
-//数据模型单例
+/**
+ *  数据模型单例
+ *
+ *  @return KTImageData
+ */
 + (instancetype)shareModel {
     static KTImageData *data;
     static dispatch_once_t onceToken;
@@ -21,7 +25,13 @@
     return data;
 }
 
-//获取图像保存路径
+/**
+ *  获取图像保存路径
+ *
+ *  @param currentIndex 图片序号
+ *
+ *  @return 图片保存路径
+ */
 + (NSString *)getSaveImagePathWithCurrentIndex:(NSInteger)currentIndex {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);//新图替换原图data
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -30,7 +40,13 @@
     return savedImagePath;
 }
 
-// 通过图像identifier获取图像Model
+/**
+ *   通过图像identifier获取图像Model
+ *
+ *  @param identifer 图片的 ID
+ *
+ *  @return KTImageModel
+ */
 + (KTImageModel *)getImageModelWithIdentifier:(NSString *)identifer {
     KTImageModel *imageModel;
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
@@ -43,7 +59,11 @@
     return imageModel;
 }
 
-///保存图像Model
+/**
+ *  保存图像Model
+ *
+ *  @param imageModel 图像模型
+ */
 + (void)storeImageModel:(KTImageModel *)imageModel {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:imageModel];
@@ -52,7 +72,13 @@
     }
 }
 
-//排列缩略图时采用矩阵类型，因此将index与tag进行转换
+/**
+ *  排列缩略图时采用矩阵类型，因此将index与tag进行转换
+ *
+ *  @param index 图片序号
+ *
+ *  @return 图片tag
+ */
 + (NSInteger)indexToTag:(NSInteger)index {
     NSInteger tag = 0;
     if (index < [KTImageData shareModel].imageLine) {
@@ -65,7 +91,13 @@
     return tag;
 }
 
-// tag转index
+/**
+ *  tag转index
+ *
+ *  @param tag 图片tag
+ *
+ *  @return 图片序号
+ */
 + (NSInteger)tagToIndex:(NSInteger)tag {
     NSInteger index = 0;
     if (tag -10 <10) {

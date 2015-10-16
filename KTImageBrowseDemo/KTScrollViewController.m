@@ -117,7 +117,9 @@
 
 
 #pragma mark - MaskViewDelegate
-//保存相册按钮单击
+/**
+ *  保存相册按钮单击
+ */
 - (void)saveButtonDidClicked {
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *documentsDirectory=[paths objectAtIndex:0];
@@ -128,7 +130,9 @@
     UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
 
-//原图按钮单击
+/**
+ *  原图按钮单击
+ */
 - (void)originPicButtonDidClicked {
     __block NSData *data;
     KTDownloadPicViewController * dn = [[KTDownloadPicViewController alloc] init];

@@ -19,7 +19,13 @@
 - (void)dealloc {
     _maskViewDelegate = nil;
 }
-
+/**
+ *  父视图内初始化
+ *
+ *  @param supperView 目标父视图
+ *
+ *  @return self
+ */
 - (instancetype)initWithView:(UIView *)supperView {
     [self setupScrollPanelViewInSuperView:supperView];
     [self setupMarkView];
@@ -32,7 +38,11 @@
 }
 
 #pragma mark - private methods
-//初始化Panel
+/**
+ *  初始化Panel
+ *
+ *  @param supperView 目标父视图
+ */
 - (void)setupScrollPanelViewInSuperView:(UIView *)supperView {
     _scrollPanel = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];//过渡layer
     _scrollPanel.backgroundColor = [UIColor clearColor];
@@ -46,7 +56,9 @@
     }];
 }
 
-//初始化黑色背景蒙板
+/**
+ *  初始化黑色背景蒙板
+ */
 - (void)setupMarkView {
     _markView = [[UIView alloc] initWithFrame:_scrollPanel.bounds];//大图背景layer
     _markView.backgroundColor = [UIColor blackColor];
@@ -60,7 +72,9 @@
     }];
 }
 
-//初始化图片计数器
+/**
+ *  初始化图片计数器
+ */
 - (void)setupCountLabelView {
     _countLabel=[[UILabel alloc] init];
     _countLabel.backgroundColor=[UIColor clearColor];
@@ -76,7 +90,9 @@
     }];
 }
 
-//初始化滚动视图
+/**
+ *  初始化滚动视图
+ */
 - (void)setupScrollView {
     _scrollView = [[UIScrollView alloc]//左右屏幕滑动layer
                    initWithFrame:CGRectMake(0,
@@ -91,7 +107,9 @@
     _scrollView.contentSize = contentSize;
 }
 
-//初始化保存图片按钮
+/**
+ *  初始化保存图片按钮
+ */
 - (void)setupSaveButtonView {
     _mySaveButton=[UIButton buttonWithType:UIButtonTypeSystem];//图片保存到本地相册
     
@@ -113,7 +131,9 @@
     }];
 }
 
-//初始化原图按钮
+/**
+ *  初始化原图按钮
+ */
 - (void)setupOriginPictureView {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 255, 255, 255, 1 });
@@ -135,7 +155,6 @@
     }];
 
 }
-
 
 #pragma mark - action response
 - (void)savePictureButtonClick {

@@ -23,6 +23,13 @@
 @implementation KTBrowseViewController
 
 #pragma mark - public methods
+/**
+ *  在父视图中初始化
+ *
+ *  @param superView 目标父视图
+ *  @param line      显示缩略图列数
+ *  @param row       显示缩略图行数
+ */
 - (void)initViweInSuperView:(UIView *)supperView
                    withLine:(NSInteger)line
                      andRow:(NSInteger)row
@@ -39,7 +46,11 @@
 
 
 #pragma mark - private methods
-//缩略图矩阵排列
+/**
+ *  缩略图矩阵排列
+ *
+ *  @param supperView 目标父视图
+ */
 - (void)setupBrowseViewInView:(UIView *) supperView {
     NSInteger index = 0;
     for (int i = 0; i < _imageRow; i++) {
@@ -81,7 +92,11 @@
     }
 }
 
-// 固定第一行image位置
+/**
+ *  固定第一行缩略图位置
+ *
+ *  @param supperView 目标父视图
+ */
 - (void)fixFirstRowPositiomInView:(UIView *)supperView {
     UIView *tempView;
     //第一排 top固定
@@ -110,7 +125,11 @@
     }];
 }
 
-//依据第一行位置确定其他行
+/**
+ *  以第一行为坐标确定其余行
+ *
+ *  @param supperView 目标父视图
+ */
 - (void)fixOtherRowInView:(UIView *)supperView {
     UIView *tempView;
     for (int i = 1; i < _imageRow; i++) {
@@ -129,7 +148,6 @@
 - (void)smallImageTapped:(KTSmallImage *)image {
     [self.scrollViewController tapKTSmallImage:image];
 }
-
 
 
 #pragma mark - setter/getter
