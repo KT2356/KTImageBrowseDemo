@@ -1,5 +1,5 @@
 //
-//  ImageModel.h
+//  KTImageModel.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ImageModel : NSObject
+@interface KTImageModel : NSObject
 
 @property (nonatomic, strong) NSString *isSavedInAlbum;/**< 是否保存于相册 */
 @property (nonatomic, strong) NSString *isOriginPicture;/**< 是否已经是原图  */

@@ -1,17 +1,17 @@
 //
-//  ImageModel.m
+//  KTImageModel.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "ImageModel.h"
-@interface ImageModel()
+#import "KTImageModel.h"
+@interface KTImageModel()
 
 @end
 
-@implementation ImageModel
+@implementation KTImageModel
 
 
 //自定义模型转换

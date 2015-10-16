@@ -1,16 +1,16 @@
 //
-//  DownloadPicViewController.m
+//  KTDownloadPicViewController.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "DownloadPicViewController.h"
-#import "ImageData.h"
+#import "KTDownloadPicViewController.h"
+#import "KTImageData.h"
 
 
-@interface DownloadPicViewController ()<MBProgressHUDDelegate>
+@interface KTDownloadPicViewController ()<MBProgressHUDDelegate>
 {
     MBProgressHUD *_HUD;/**<菊花*/
     long long _expectedLength;/**<数据结构长度*/
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSData *imageResult;
 @end
 
-@implementation DownloadPicViewController
+@implementation KTDownloadPicViewController
 
 #pragma mark - life cycle
 - (instancetype)init {

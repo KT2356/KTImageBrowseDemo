@@ -1,5 +1,5 @@
 //
-//  ScrollViewController.h
+//  KTScrollViewController.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
@@ -7,9 +7,9 @@
 //  图片滑动控制器
 
 #import <UIKit/UIKit.h>
-@class SmallImage;
+@class KTSmallImage;
 
-@interface ScrollViewController : UIViewController
+@interface KTScrollViewController : UIViewController
 
-- (void) tapSmallImage:(SmallImage *)sender;
+- (void) tapKTSmallImage:(KTSmallImage *)sender;
 @end

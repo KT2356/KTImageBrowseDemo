@@ -49,8 +49,8 @@
     
     
     [KTImageBrowse setupBrowseViewInTargetView:tempview
-                                      withLine:3
-                                        andRow:3];
+                                      withLine:4
+                                        andRow:2];
 
 }
 

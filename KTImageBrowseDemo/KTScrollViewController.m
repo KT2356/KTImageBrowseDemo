@@ -1,21 +1,21 @@
 //
-//  ScrollViewController.m
+//  KTScrollViewController.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "ScrollViewController.h"
-#import "ImageData.h"
-#import "SmallImage.h"
-#import "ImgScrollView.h"
-#import "MaskView.h"
-#import "ImageModel.h"
+#import "KTScrollViewController.h"
+#import "KTImageData.h"
+#import "KTSmallImage.h"
+#import "KTImgScrollView.h"
+#import "KTImageMaskView.h"
+#import "KTImageModel.h"
 #import "MBProgressHUD.h"
-#import "DownloadPicViewController.h"
+#import "KTDownloadPicViewController.h"
 
-@interface ScrollViewController()<UIScrollViewDelegate,ImgScrollViewDelegate,MaskViewDelegate>
+@interface KTScrollViewController()<UIScrollViewDelegate,KTImgScrollViewDelegate,KTImageMaskViewDelegate>
 {
     NSInteger _imageCount;
     NSInteger _currentIndex;
@@ -29,23 +29,23 @@
 @property (nonatomic, strong) UIButton *originPictureButton;
 @property (nonatomic, strong) UIButton *savePictureButton;
 @property (nonatomic, assign)  CGRect convertRectView;
-@property (nonatomic, strong) MaskView *setMaskView;
+@property (nonatomic, strong) KTImageMaskView *setMaskView;
 
 @property (nonatomic, strong) UIView *supperViewTemp;
 
 @end
 
-@implementation ScrollViewController
+@implementation KTScrollViewController
 
 #pragma mark - life cycle
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _imageCount = [ImageData shareModel].imageUrlList.count;
+        _imageCount = [KTImageData shareModel].imageUrlList.count;
         _rootViewController = [[UIViewController alloc] init];
         _rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
         
-        _setMaskView = [[MaskView alloc] initWithView:_rootViewController.view];
+        _setMaskView = [[KTImageMaskView alloc] initWithView:_rootViewController.view];
         _setMaskView.maskViewDelegate = self;
         
         _scrollPanel = _setMaskView.scrollPanel;
@@ -61,13 +61,13 @@
 
 
 #pragma mark - public methods
-- (void) tapSmallImage:(SmallImage *)sender {
+- (void) tapKTSmallImage:(KTSmallImage *)sender {
     _supperViewTemp = sender.superview;
     [self.view bringSubviewToFront:_scrollView];
     _scrollPanel.alpha = 1.0;
     
-    SmallImage *tmpView = sender;
-    _currentIndex = [ImageData tagToIndex:tmpView.tag];
+    KTSmallImage *tmpView = sender;
+    _currentIndex = [KTImageData tagToIndex:tmpView.tag];
     NSString *labelOutString=[[NSString alloc] initWithFormat:@"%ld/%ld",(long)(_currentIndex+1),(long)_imageCount];
     _countLabel.text=labelOutString;
     [self checkButtonStateWithCurrentIndex:_currentIndex];
@@ -78,7 +78,7 @@
     _scrollView.contentOffset = contentOffset;
     
     [self addSubImgView:sender];
-    ImgScrollView *tmpImgScrollView = [[ImgScrollView alloc] initWithFrame:(CGRect){contentOffset,_scrollView.bounds.size}];
+    KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc] initWithFrame:(CGRect){contentOffset,_scrollView.bounds.size}];
     [tmpImgScrollView setContentWithFrame:convertRect];
     tmpImgScrollView.i_delegate = self;
     
@@ -94,7 +94,7 @@
 #pragma mark -  ImgScrollViewDelegate
 - (void) tapImageViewTappedWithObject:(id)sender
 {
-    ImgScrollView *tmpImgView = sender;
+    KTImgScrollView *tmpImgView = sender;
     [UIView animateWithDuration:0.5 animations:^{
         _markView.alpha = 0;
         [tmpImgView rechangeInitRdct];
@@ -122,7 +122,7 @@
     NSArray *paths=NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
     NSString *documentsDirectory=[paths objectAtIndex:0];
     NSString *readImagePath=[documentsDirectory stringByAppendingPathComponent:
-                             [[ImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+                             [[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     NSData *myDataFromPath=[NSData dataWithContentsOfFile:readImagePath];
     UIImage *savedImage=[UIImage imageWithData:myDataFromPath];
     UIImageWriteToSavedPhotosAlbum(savedImage, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
@@ -131,10 +131,10 @@
 //原图按钮单击
 - (void)originPicButtonDidClicked {
     __block NSData *data;
-    DownloadPicViewController * dn = [[DownloadPicViewController alloc] init];
+    KTDownloadPicViewController * dn = [[KTDownloadPicViewController alloc] init];
     __weak typeof(self) weakself = self;
-    NSString *savedImagePath = [ImageData getSaveImagePathWithCurrentIndex:_currentIndex];
-    [dn downloadPicWithURLStingWithProgress: [ImageData shareModel].imageBigUrlList[_currentIndex]
+    NSString *savedImagePath = [KTImageData getSaveImagePathWithCurrentIndex:_currentIndex];
+    [dn downloadPicWithURLStingWithProgress: [KTImageData shareModel].imageBigUrlList[_currentIndex]
                                 finishBlock:^(NSData *resultData) {
                                     data = resultData;
                                     [weakself waitForDownloadWithData:data];
@@ -142,14 +142,14 @@
                                     _originPictureButton.hidden = YES;
                                 }];
     
-    ImageModel *imageModel = [ImageData getImageModelWithIdentifier:[[ImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+    KTImageModel *imageModel = [KTImageData getImageModelWithIdentifier:[[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     if (!imageModel) {
-        imageModel = [[ImageModel alloc] init];
-        imageModel.imageIdentifier = [[ImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""];
+        imageModel = [[KTImageModel alloc] init];
+        imageModel.imageIdentifier = [[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""];
     }
     imageModel.isOriginPicture = @"YES";
     
-    [ImageData  storeImageModel:imageModel];
+    [KTImageData  storeImageModel:imageModel];
 }
 
 #pragma mark - ImageSaveing Delegate
@@ -160,14 +160,14 @@
     } else {
         msg = @"保存图片成功";
         _savePictureButton.hidden = YES;
-        ImageModel *imageModel = [ImageData getImageModelWithIdentifier:[[ImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+        KTImageModel *imageModel = [KTImageData getImageModelWithIdentifier:[[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
         if (!imageModel) {
-            imageModel = [[ImageModel alloc] init];
-            imageModel.imageIdentifier = [[ImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""];
+            imageModel = [[KTImageModel alloc] init];
+            imageModel.imageIdentifier = [[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""];
         }
         imageModel.isSavedInAlbum = @"YES";
         
-        [ImageData  storeImageModel:imageModel];
+        [KTImageData  storeImageModel:imageModel];
     }
     MBProgressHUD *HUD;
     HUD = [MBProgressHUD showHUDAddedTo:_rootViewController.view animated:YES];
@@ -178,7 +178,7 @@
 }
 
 #pragma mark - private methods
-- (void) addSubImgView:(SmallImage *)sender {
+- (void) addSubImgView:(KTSmallImage *)sender {
     for (UIView *tmpView in _scrollView.subviews) {
         [tmpView removeFromSuperview];
     }
@@ -188,11 +188,11 @@
             continue;
         }
         
-        SmallImage *tmpView = (SmallImage *)[[sender superview]
-                                             viewWithTag:[ImageData indexToTag:i]];
+        KTSmallImage *tmpView = (KTSmallImage *)[[sender superview]
+                                             viewWithTag:[KTImageData indexToTag:i]];
         
         _convertRectView = [[tmpView superview] convertRect:tmpView.frame toView:_rootViewController.view];
-        ImgScrollView *tmpImgScrollView = [[ImgScrollView alloc] initWithFrame:
+        KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc] initWithFrame:
                                            (CGRect){i*([UIScreen mainScreen].bounds.size.width ),0,_scrollView.bounds.size}];
         
         [tmpImgScrollView setContentWithFrame:_convertRectView];
@@ -206,7 +206,7 @@
 
 
 //大图弹出动画效果
-- (void) setOriginFrame:(ImgScrollView *) sender
+- (void) setOriginFrame:(KTImgScrollView *) sender
 {
     [UIView animateWithDuration:0.5 animations:^{
         [sender setAnimationRect];
@@ -215,7 +215,7 @@
 }
 
 - (void)checkButtonStateWithCurrentIndex:(NSInteger)currentIndex {
-    ImageModel *imageModel = [ImageData getImageModelWithIdentifier:[[ImageData shareModel].imageUrlList[currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+    KTImageModel *imageModel = [KTImageData getImageModelWithIdentifier:[[KTImageData shareModel].imageUrlList[currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     if (imageModel) {
         if ([imageModel.isOriginPicture isEqualToString:@"YES"]) {
             _originPictureButton.hidden = YES;
@@ -240,13 +240,13 @@
 
 - (void)waitForDownloadWithData:(NSData *)data {
     
-    NSInteger tag= [ImageData indexToTag:_currentIndex];
-    SmallImage *tmpView = (SmallImage *)[_supperViewTemp viewWithTag:tag];
+    NSInteger tag= [KTImageData indexToTag:_currentIndex];
+    KTSmallImage *tmpView = (KTSmallImage *)[_supperViewTemp viewWithTag:tag];
     tmpView.image = [UIImage imageWithData:data];
     [self addSubImgView:tmpView];
     
     _convertRectView = [[tmpView superview] convertRect:tmpView.frame toView:_rootViewController.view];
-    ImgScrollView *tmpImgScrollView = [[ImgScrollView alloc] initWithFrame:
+    KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc] initWithFrame:
                                        (CGRect){_currentIndex*_scrollView.bounds.size.width,0,_scrollView.bounds.size}];
     
     [tmpImgScrollView setContentWithFrame:_convertRectView];

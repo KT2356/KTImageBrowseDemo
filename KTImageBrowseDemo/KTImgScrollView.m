@@ -1,15 +1,15 @@
 
 //
-//  ImgScrollView.m
+//  KTImgScrollView.m
 //  Picturetest
 //
 //  Created by KT on 15-7-18.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
-#import "ImgScrollView.h"
-#import "ScrollViewController.h"
+#import "KTImgScrollView.h"
+#import "KTScrollViewController.h"
 
-@interface ImgScrollView()<UIScrollViewDelegate>
+@interface KTImgScrollView()<UIScrollViewDelegate>
 {
     UIImageView *_imgView;
     CGRect _scaleOriginRect;/**<记录自己的位置*/
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation ImgScrollView
+@implementation KTImgScrollView
 
 #pragma mark - life cycle
 - (void)dealloc {

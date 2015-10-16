@@ -1,5 +1,5 @@
 //
-//  ImageData.h
+//  KTImageData.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class ImageModel;
-@interface ImageData : NSObject
+@class KTImageModel;
+@interface KTImageData : NSObject
 
 @property (nonatomic, strong) NSArray *imageUrlList;/**<缩略图URL*/
 @property (nonatomic, strong) NSArray *imageBigUrlList;/**<大图URL*/
@@ -21,8 +21,8 @@
 + (NSInteger)indexToTag:(NSInteger)index;
 + (NSInteger)tagToIndex:(NSInteger)tag;
 
-+ (ImageModel *)getImageModelWithIdentifier:(NSString *)identifer ;
-+ (void)storeImageModel:(ImageModel *)imageModel ;
++ (KTImageModel *)getImageModelWithIdentifier:(NSString *)identifer ;
++ (void)storeImageModel:(KTImageModel *)imageModel ;
 + (NSString *)getSaveImagePathWithCurrentIndex:(NSInteger)currentIndex;
 @end
 

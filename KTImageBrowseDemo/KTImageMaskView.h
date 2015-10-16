@@ -1,5 +1,5 @@
 //
-//  MaskView.h
+//  KTImageMaskView.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
@@ -10,16 +10,16 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MaskViewDelegate <NSObject>
+@protocol KTImageMaskViewDelegate <NSObject>
 @required 
 - (void)saveButtonDidClicked;
 - (void)originPicButtonDidClicked;
 @end
 
 
-@interface MaskView : UIView
+@interface KTImageMaskView : UIView
 
-@property (nonatomic, weak) id<MaskViewDelegate>maskViewDelegate;
+@property (nonatomic, weak) id<KTImageMaskViewDelegate>maskViewDelegate;
 
 @property (nonatomic, strong) UIView *scrollPanel;
 @property (nonatomic, strong) UIView *markView;

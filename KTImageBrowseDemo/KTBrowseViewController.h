@@ -1,5 +1,5 @@
 //
-//  BrowseViewController.h
+//  KTBrowseViewController.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
@@ -7,7 +7,7 @@
 //  缩略图Autolayout 矩阵排列
 
 #import <UIKit/UIKit.h>
-@interface BrowseViewController : UIViewController
+@interface KTBrowseViewController : UIViewController
 
 - (void)initViweInSuperView:(UIView *)superView
                    withLine:(NSInteger)line

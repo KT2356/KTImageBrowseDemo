@@ -1,5 +1,5 @@
 //
-//  DownloadPicViewController.h
+//  KTDownloadPicViewController.h
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
@@ -11,7 +11,7 @@
 
 typedef void (^FinishBlick)(NSData *resultData);
 
-@interface DownloadPicViewController : UIViewController
+@interface KTDownloadPicViewController : UIViewController
 @property (nonatomic, copy) FinishBlick finishBlock;
 
 - (void)downloadPicWithURLSting:(NSString *)urlString

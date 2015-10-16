@@ -1,19 +1,19 @@
 //
-//  MaskView.m
+//  KTImageMaskView.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/18.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "MaskView.h"
+#import "KTImageMaskView.h"
 #import "Masonry.h"
-#import "ImageData.h"
-@interface MaskView()
+#import "KTImageData.h"
+@interface KTImageMaskView ()
 
 @end
 
-@implementation MaskView
+@implementation KTImageMaskView
 
 #pragma mark - life cycle
 - (void)dealloc {
@@ -87,7 +87,7 @@
     _scrollView.pagingEnabled = YES;
     CGSize contentSize = _scrollView.contentSize;
     contentSize.height =0;
-    contentSize.width = [UIScreen mainScreen].bounds.size.width * [ImageData shareModel].imageUrlList.count ;
+    contentSize.width = [UIScreen mainScreen].bounds.size.width * [KTImageData shareModel].imageUrlList.count ;
     _scrollView.contentSize = contentSize;
 }
 

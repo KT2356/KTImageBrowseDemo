@@ -1,21 +1,20 @@
 //
-//  SmallImage.m
+//  KTSmallImage.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "SmallImage.h"
+#import "KTSmallImage.h"
 #import "Masonry.h"
-#import "ImageData.h"
+#import "KTImageData.h"
 
-
-@interface SmallImage()
+@interface KTSmallImage()
 @property (nonatomic, strong) UIView *tempView;
 @end
 
-@implementation SmallImage
+@implementation KTSmallImage
 
 #pragma mark - life cycle
 - (void)dealloc {
@@ -49,7 +48,7 @@
 #pragma mark - Action response
 - (void)imageTapped:(UITapGestureRecognizer *)gesture {
     if ([self.ktSmallImageDelegate respondsToSelector:@selector(smallImageTapped:)]) {
-        [self.ktSmallImageDelegate smallImageTapped:(SmallImage *)[_tempView viewWithTag:self.tag]];
+        [self.ktSmallImageDelegate smallImageTapped:(KTSmallImage *)[_tempView viewWithTag:self.tag]];
     }
 }
 

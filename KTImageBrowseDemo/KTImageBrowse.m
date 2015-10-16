@@ -7,8 +7,8 @@
 //
 
 #import "KTImageBrowse.h"
-#import "BrowseViewController.h"
-#import "ImageData.h"
+#import "KTBrowseViewController.h"
+#import "KTImageData.h"
 
 @interface KTImageBrowse ()
 
@@ -20,25 +20,25 @@
 + (void)setupBrowseViewInTargetView:(UIView *)supperView
                            withLine:(NSInteger)line
                              andRow:(NSInteger)row {
-    BrowseViewController *browseViewController = [[BrowseViewController alloc] init];
+    KTBrowseViewController *browseViewController = [[KTBrowseViewController alloc] init];
     [browseViewController initViweInSuperView:supperView withLine:line andRow:row];
 }
 
 #pragma mark - 只有缩略图URL
 + (void)setImageDataWithURL:(NSArray *)URLArry
           andPlaceholdImage:(UIImage *)placeholdImage {
-    [ImageData shareModel].imageUrlList = URLArry;
-    [ImageData shareModel].imageBigUrlList = URLArry;
-    [ImageData shareModel].placeholdImage = placeholdImage;
+    [KTImageData shareModel].imageUrlList = URLArry;
+    [KTImageData shareModel].imageBigUrlList = URLArry;
+    [KTImageData shareModel].placeholdImage = placeholdImage;
 }
 
 #pragma mark - 缩略图，大图URL
 + (void)setImageDataWithURL:(NSArray *)URLArry
         andOriginPictureURL:(NSArray *)OriginPicURLArry
           andPlaceholdImage:(UIImage *)placeholdImage {
-    [ImageData shareModel].imageUrlList = URLArry;
-    [ImageData shareModel].imageBigUrlList = OriginPicURLArry;
-    [ImageData shareModel].placeholdImage = placeholdImage;
+    [KTImageData shareModel].imageUrlList = URLArry;
+    [KTImageData shareModel].imageBigUrlList = OriginPicURLArry;
+    [KTImageData shareModel].placeholdImage = placeholdImage;
 }
 
 

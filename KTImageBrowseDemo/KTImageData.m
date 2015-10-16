@@ -1,22 +1,22 @@
 //
-//  ImageData.m
+//  KTImageData.m
 //  KTImageBrowse
 //
 //  Created by KT on 15/9/15.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
 
-#import "ImageData.h"
-#import "ImageModel.h"
+#import "KTImageData.h"
+#import "KTImageModel.h"
 
-@implementation ImageData
+@implementation KTImageData
 
 //数据模型单例
 + (instancetype)shareModel {
-    static ImageData *data;
+    static KTImageData *data;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        data = [[ImageData alloc] init];
+        data = [[KTImageData alloc] init];
     });
     return data;
 }
@@ -26,13 +26,13 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);//新图替换原图data
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *savedImagePath = [documentsDirectory stringByAppendingPathComponent:
-                              [[ImageData shareModel].imageUrlList[currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
+                              [[KTImageData shareModel].imageUrlList[currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     return savedImagePath;
 }
 
 // 通过图像identifier获取图像Model
-+ (ImageModel *)getImageModelWithIdentifier:(NSString *)identifer {
-    ImageModel *imageModel;
++ (KTImageModel *)getImageModelWithIdentifier:(NSString *)identifer {
+    KTImageModel *imageModel;
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     
     NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:imageModel];
@@ -44,7 +44,7 @@
 }
 
 ///保存图像Model
-+ (void)storeImageModel:(ImageModel *)imageModel {
++ (void)storeImageModel:(KTImageModel *)imageModel {
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSData *udObject = [NSKeyedArchiver archivedDataWithRootObject:imageModel];
     if (udObject) {
@@ -55,12 +55,12 @@
 //排列缩略图时采用矩阵类型，因此将index与tag进行转换
 + (NSInteger)indexToTag:(NSInteger)index {
     NSInteger tag = 0;
-    if (index < [ImageData shareModel].imageLine) {
+    if (index < [KTImageData shareModel].imageLine) {
         tag = index + 10;
     } else {
         NSInteger mutlply = 0;
-        mutlply = (index )/[ImageData shareModel].imageLine;
-        tag = mutlply *10 + (index - [ImageData shareModel].imageLine * mutlply)+10;
+        mutlply = (index )/[KTImageData shareModel].imageLine;
+        tag = mutlply *10 + (index - [KTImageData shareModel].imageLine * mutlply)+10;
     }
     return tag;
 }
@@ -73,7 +73,7 @@
     } else {
         NSInteger mutlply = 0;
         mutlply = (tag -10)/10;
-        index = mutlply*[ImageData shareModel].imageLine +tag -10*mutlply -10;
+        index = mutlply*[KTImageData shareModel].imageLine +tag -10*mutlply -10;
     }
     return index;
 }
