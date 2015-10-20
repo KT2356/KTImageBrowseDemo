@@ -97,13 +97,13 @@
     _scrollView = [[UIScrollView alloc]//左右屏幕滑动layer
                    initWithFrame:CGRectMake(0,
                                             0,
-                                            [UIScreen mainScreen].bounds.size.width,
+                                            [UIScreen mainScreen].bounds.size.width+15,
                                             [UIScreen mainScreen].bounds.size.height-50)];
     [_scrollPanel addSubview:_scrollView];
     _scrollView.pagingEnabled = YES;
     CGSize contentSize = _scrollView.contentSize;
     contentSize.height =0;
-    contentSize.width = [UIScreen mainScreen].bounds.size.width * [KTImageData shareModel].imageUrlList.count ;
+    contentSize.width = ([UIScreen mainScreen].bounds.size.width + 15) * [KTImageData shareModel].imageUrlList.count ;
     _scrollView.contentSize = contentSize;
 }
 

@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		3BDC437BC0C9E662D0CAE88B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D484EE6D5BDBA967252176 /* libPods.a */; };
 		681345EC1BAFFD9C00FF8887 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681345EA1BAFFD9C00FF8887 /* Main.storyboard */; };
-		681345EE1BAFFD9C00FF8887 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681345ED1BAFFD9C00FF8887 /* Images.xcassets */; };
 		681345F11BAFFD9C00FF8887 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681345EF1BAFFD9C00FF8887 /* LaunchScreen.xib */; };
 		681345FD1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345FC1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m */; };
-		6813461E1BAFFE2800FF8887 /* 37x-Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 681346091BAFFE2800FF8887 /* 37x-Checkmark.png */; };
-		6813461F1BAFFE2800FF8887 /* 37x-Checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */; };
 		681346201BAFFE2800FF8887 /* appIcon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 6813460B1BAFFE2800FF8887 /* appIcon60.png */; };
+		687466D81BD47716004C309D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687466D71BD47716004C309D /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 		68BF03B01BD0F38100825F0F /* KTBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460D1BAFFE2800FF8887 /* KTBrowseViewController.m */; };
 		68BF03B11BD0F38100825F0F /* KTDownloadPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460F1BAFFE2800FF8887 /* KTDownloadPicViewController.m */; };
 		68BF03B21BD0F38100825F0F /* KTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346111BAFFE2800FF8887 /* KTImageData.m */; };
@@ -49,13 +47,10 @@
 		681345E71BAFFD9C00FF8887 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		681345E81BAFFD9C00FF8887 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		681345EB1BAFFD9C00FF8887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		681345ED1BAFFD9C00FF8887 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		681345F01BAFFD9C00FF8887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		681345F61BAFFD9C00FF8887 /* KTImageBrowseDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KTImageBrowseDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		681345FB1BAFFD9C00FF8887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681345FC1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTImageBrowseDemoTests.m; sourceTree = "<group>"; };
-		681346091BAFFE2800FF8887 /* 37x-Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark.png"; sourceTree = "<group>"; };
-		6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "37x-Checkmark@2x.png"; sourceTree = "<group>"; };
 		6813460B1BAFFE2800FF8887 /* appIcon60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon60.png; sourceTree = "<group>"; };
 		6813460C1BAFFE2800FF8887 /* KTBrowseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBrowseViewController.h; sourceTree = "<group>"; };
 		6813460D1BAFFE2800FF8887 /* KTBrowseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBrowseViewController.m; sourceTree = "<group>"; };
@@ -75,6 +70,7 @@
 		6813461B1BAFFE2800FF8887 /* KTScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTScrollViewController.m; sourceTree = "<group>"; };
 		6813461C1BAFFE2800FF8887 /* KTSmallImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSmallImage.h; sourceTree = "<group>"; };
 		6813461D1BAFFE2800FF8887 /* KTSmallImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSmallImage.m; sourceTree = "<group>"; };
+		687466D71BD47716004C309D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6C90FC0012A91827A711432B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F2D484EE6D5BDBA967252176 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -136,8 +132,9 @@
 				681345E71BAFFD9C00FF8887 /* ViewController.h */,
 				681345E81BAFFD9C00FF8887 /* ViewController.m */,
 				681345EA1BAFFD9C00FF8887 /* Main.storyboard */,
-				681345ED1BAFFD9C00FF8887 /* Images.xcassets */,
+				6813460B1BAFFE2800FF8887 /* appIcon60.png */,
 				681345EF1BAFFD9C00FF8887 /* LaunchScreen.xib */,
+				687466D71BD47716004C309D /* Images.xcassets */,
 				681345E01BAFFD9C00FF8887 /* Supporting Files */,
 			);
 			path = KTImageBrowseDemo;
@@ -172,27 +169,24 @@
 		681346081BAFFE0F00FF8887 /* KTImageBrowse */ = {
 			isa = PBXGroup;
 			children = (
-				681346091BAFFE2800FF8887 /* 37x-Checkmark.png */,
-				6813460A1BAFFE2800FF8887 /* 37x-Checkmark@2x.png */,
-				6813460B1BAFFE2800FF8887 /* appIcon60.png */,
-				6813460C1BAFFE2800FF8887 /* KTBrowseViewController.h */,
-				6813460D1BAFFE2800FF8887 /* KTBrowseViewController.m */,
-				6813460E1BAFFE2800FF8887 /* KTDownloadPicViewController.h */,
-				6813460F1BAFFE2800FF8887 /* KTDownloadPicViewController.m */,
+				681346161BAFFE2800FF8887 /* KTImageBrowse.h */,
+				681346171BAFFE2800FF8887 /* KTImageBrowse.m */,
 				681346101BAFFE2800FF8887 /* KTImageData.h */,
 				681346111BAFFE2800FF8887 /* KTImageData.m */,
 				681346121BAFFE2800FF8887 /* KTImageModel.h */,
 				681346131BAFFE2800FF8887 /* KTImageModel.m */,
-				681346141BAFFE2800FF8887 /* KTImgScrollView.h */,
-				681346151BAFFE2800FF8887 /* KTImgScrollView.m */,
-				681346161BAFFE2800FF8887 /* KTImageBrowse.h */,
-				681346171BAFFE2800FF8887 /* KTImageBrowse.m */,
 				681346181BAFFE2800FF8887 /* KTImageMaskView.h */,
 				681346191BAFFE2800FF8887 /* KTimageMaskView.m */,
-				6813461A1BAFFE2800FF8887 /* KTScrollViewController.h */,
-				6813461B1BAFFE2800FF8887 /* KTScrollViewController.m */,
+				681346141BAFFE2800FF8887 /* KTImgScrollView.h */,
+				681346151BAFFE2800FF8887 /* KTImgScrollView.m */,
 				6813461C1BAFFE2800FF8887 /* KTSmallImage.h */,
 				6813461D1BAFFE2800FF8887 /* KTSmallImage.m */,
+				6813460E1BAFFE2800FF8887 /* KTDownloadPicViewController.h */,
+				6813460F1BAFFE2800FF8887 /* KTDownloadPicViewController.m */,
+				6813460C1BAFFE2800FF8887 /* KTBrowseViewController.h */,
+				6813460D1BAFFE2800FF8887 /* KTBrowseViewController.m */,
+				6813461A1BAFFE2800FF8887 /* KTScrollViewController.h */,
+				6813461B1BAFFE2800FF8887 /* KTScrollViewController.m */,
 			);
 			name = KTImageBrowse;
 			sourceTree = "<group>";
@@ -288,11 +282,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				681346201BAFFE2800FF8887 /* appIcon60.png in Resources */,
-				6813461E1BAFFE2800FF8887 /* 37x-Checkmark.png in Resources */,
 				681345EC1BAFFD9C00FF8887 /* Main.storyboard in Resources */,
+				687466D81BD47716004C309D /* Images.xcassets in Resources */,
 				681345F11BAFFD9C00FF8887 /* LaunchScreen.xib in Resources */,
-				6813461F1BAFFE2800FF8887 /* 37x-Checkmark@2x.png in Resources */,
-				681345EE1BAFFD9C00FF8887 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

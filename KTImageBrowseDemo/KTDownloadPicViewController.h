@@ -7,7 +7,6 @@
 // 图片数据下载容器
 
 #import <UIKit/UIKit.h>
-#import "MBProgressHUD.h"
 
 typedef void (^FinishBlick)(NSData *resultData);
 

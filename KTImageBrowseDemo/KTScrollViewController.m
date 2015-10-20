@@ -5,6 +5,7 @@
 //  Created by KT on 15/9/15.
 //  Copyright (c) 2015年 KT. All rights reserved.
 //
+#define UISCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 
 #import "KTScrollViewController.h"
 #import "KTImageData.h"
@@ -12,8 +13,8 @@
 #import "KTImgScrollView.h"
 #import "KTImageMaskView.h"
 #import "KTImageModel.h"
-#import "MBProgressHUD.h"
 #import "KTDownloadPicViewController.h"
+#import "SVProgressHUD.h"
 
 @interface KTScrollViewController()<UIScrollViewDelegate,KTImgScrollViewDelegate,KTImageMaskViewDelegate>
 {
@@ -49,9 +50,9 @@
         _setMaskView.maskViewDelegate = self;
         
         _scrollPanel = _setMaskView.scrollPanel;
-        _markView = _setMaskView.markView;
-        _countLabel = _setMaskView.countLabel;
-        _scrollView = _setMaskView.scrollView;
+        _markView    = _setMaskView.markView;
+        _countLabel  = _setMaskView.countLabel;
+        _scrollView  = _setMaskView.scrollView;
         _originPictureButton = _setMaskView.myOriginPicture;
         _savePictureButton = _setMaskView.mySaveButton;
         _scrollView.delegate = self;
@@ -74,11 +75,14 @@
 
     CGRect convertRect = [[tmpView superview] convertRect:tmpView.frame toView:_rootViewController.view];
     CGPoint contentOffset = _scrollView.contentOffset;
-    contentOffset.x = _currentIndex*([UIScreen mainScreen].bounds.size.width );
+    contentOffset.x = _currentIndex*([UIScreen mainScreen].bounds.size.width + 15);
     _scrollView.contentOffset = contentOffset;
     
     [self addSubImgView:sender];
-    KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc] initWithFrame:(CGRect){contentOffset,_scrollView.bounds.size}];
+    KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc]
+                                         initWithFrame:(CGRect){contentOffset,
+                                             _scrollView.bounds.size.width - 15,
+                                             _scrollView.bounds.size.height}];
     [tmpImgScrollView setContentWithFrame:convertRect];
     tmpImgScrollView.i_delegate = self;
     
@@ -104,15 +108,13 @@
 }
 
 #pragma mark - ScrollViewDelegate
+#pragma mark - ScrollViewDelegate
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat pageWidth = scrollView.frame.size.width;
-    _currentIndex = floor((scrollView.contentOffset.x - pageWidth-10 / 2) / pageWidth) + 2;
+    _currentIndex = floor((scrollView.contentOffset.x - pageWidth-15 / 2) / pageWidth) + 2;
     NSString *outstring=[[NSString alloc] initWithFormat:@"%ld/%ld",(long)(_currentIndex+1),(long)_imageCount];
     _countLabel.text=outstring;
-    
-    [self checkButtonStateWithCurrentIndex:_currentIndex];
-    
 }
 
 
@@ -161,8 +163,10 @@
     NSString *msg = nil;
     if(error) {
         msg = @"保存图片失败";
+        [SVProgressHUD showErrorWithStatus:msg];
     } else {
         msg = @"保存图片成功";
+        [SVProgressHUD showSuccessWithStatus:msg];
         _savePictureButton.hidden = YES;
         KTImageModel *imageModel = [KTImageData getImageModelWithIdentifier:[[KTImageData shareModel].imageUrlList[_currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
         if (!imageModel) {
@@ -173,12 +177,6 @@
         
         [KTImageData  storeImageModel:imageModel];
     }
-    MBProgressHUD *HUD;
-    HUD = [MBProgressHUD showHUDAddedTo:_rootViewController.view animated:YES];
-    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"37x-Checkmark.png"]];
-    HUD.mode = MBProgressHUDModeCustomView;
-    HUD.labelText=msg;
-    [HUD hide:YES afterDelay:0.5];
 }
 
 #pragma mark - private methods
@@ -197,7 +195,7 @@
         
         _convertRectView = [[tmpView superview] convertRect:tmpView.frame toView:_rootViewController.view];
         KTImgScrollView *tmpImgScrollView = [[KTImgScrollView alloc] initWithFrame:
-                                           (CGRect){i*([UIScreen mainScreen].bounds.size.width ),0,_scrollView.bounds.size}];
+                                           (CGRect){i*([UIScreen mainScreen].bounds.size.width + 15),0,_scrollView.bounds.size.width-15,_scrollView.bounds.size.height}];
         
         [tmpImgScrollView setContentWithFrame:_convertRectView];
         [tmpImgScrollView setImage:tmpView.image];

@@ -37,6 +37,7 @@
         self.minimumZoomScale = 1.0;
         
         _imgView = [[UIImageView alloc] init];
+        _imgView.backgroundColor = [UIColor clearColor];
         _imgView.clipsToBounds = YES;
         _imgView.contentMode = UIViewContentModeScaleAspectFill;
         [self addSubview:_imgView];
@@ -94,7 +95,7 @@
             //X先到边缘
             float imgViewHeight = _imgSize.height*scaleX;
             self.maximumZoomScale = self.frame.size.height/imgViewHeight;
-            _scaleOriginRect = (CGRect){0,self.frame.size.height/2-imgViewHeight/2 ,self.frame.size.width,imgViewHeight};
+            _scaleOriginRect = (CGRect){0,self.frame.size.height/2-imgViewHeight/2 ,self.frame.size.width+10,imgViewHeight};
         }
     }
 }
