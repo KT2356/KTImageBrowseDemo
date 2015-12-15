@@ -8,6 +8,7 @@
 //
 #import "KTImgScrollView.h"
 #import "KTScrollViewController.h"
+#import "Masonry.h"
 
 @interface KTImgScrollView()<UIScrollViewDelegate>
 {
@@ -134,6 +135,7 @@
 
 // double tapped
 - (void)handleDoubleTap:(UIGestureRecognizer *)sender {
+   
     if(self.zoomScale > 1.0){
         self.zoomScale  = 1.0;
         [self setZoomScale:1.0 animated:YES];
@@ -143,5 +145,6 @@
     }
 
 }
+
 
 @end

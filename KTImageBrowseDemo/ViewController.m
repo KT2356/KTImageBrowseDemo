@@ -50,8 +50,7 @@
     
     [KTImageBrowse setupBrowseViewInTargetView:tempview
                                       withLine:4
-                                        andRow:2];
-
+                                        andRow:4];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -56,6 +56,8 @@
         _originPictureButton = _setMaskView.myOriginPicture;
         _savePictureButton = _setMaskView.mySaveButton;
         _scrollView.delegate = self;
+        
+        [_scrollView bringSubviewToFront:_savePictureButton];
     }
     return self;
 }
@@ -108,13 +110,18 @@
 }
 
 #pragma mark - ScrollViewDelegate
-#pragma mark - ScrollViewDelegate
+/**
+ *  改变标签，获取当前index
+ *
+ *  @param scrollView _scrollView
+ */
 - (void) scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     CGFloat pageWidth = scrollView.frame.size.width;
     _currentIndex = floor((scrollView.contentOffset.x - pageWidth-15 / 2) / pageWidth) + 2;
     NSString *outstring=[[NSString alloc] initWithFormat:@"%ld/%ld",(long)(_currentIndex+1),(long)_imageCount];
     _countLabel.text=outstring;
+    [self checkButtonStateWithCurrentIndex:_currentIndex];
 }
 
 
@@ -159,6 +166,13 @@
 }
 
 #pragma mark - ImageSaveing Delegate
+/**
+ *  保存图片
+ *
+ *  @param image       需要保存的图片
+ *  @param error       错误信息
+ *  @param contextInfo info
+ */
 - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
     NSString *msg = nil;
     if(error) {
@@ -180,16 +194,19 @@
 }
 
 #pragma mark - private methods
+/**
+ *  点击小图生成ScrollView中大图
+ *
+ *  @param sender 被点击单小图sender
+ */
 - (void) addSubImgView:(KTSmallImage *)sender {
     for (UIView *tmpView in _scrollView.subviews) {
         [tmpView removeFromSuperview];
     }
-    
     for (int i = 0; i < _imageCount; i ++) {
         if (i == _currentIndex) {//单击当前位置不创建图片
             continue;
         }
-        
         KTSmallImage *tmpView = (KTSmallImage *)[[sender superview]
                                              viewWithTag:[KTImageData indexToTag:i]];
         
@@ -206,8 +223,11 @@
     }
 }
 
-
-//大图弹出动画效果
+/**
+ *  大图弹出动画
+ *
+ *  @param sender 被点击小图
+ */
 - (void) setOriginFrame:(KTImgScrollView *) sender
 {
     [UIView animateWithDuration:0.5 animations:^{
@@ -216,6 +236,11 @@
     }];
 }
 
+/**
+ *  是否显示“保存”，“原图”按钮
+ *
+ *  @param currentIndex _currentIndex
+ */
 - (void)checkButtonStateWithCurrentIndex:(NSInteger)currentIndex {
     KTImageModel *imageModel = [KTImageData getImageModelWithIdentifier:[[KTImageData shareModel].imageUrlList[currentIndex] stringByReplacingOccurrencesOfString:@"/" withString:@""]];
     if (imageModel) {
@@ -240,6 +265,11 @@
     }
 }
 
+/**
+ *  等待大图下载完成
+ *
+ *  @param data 大图data
+ */
 - (void)waitForDownloadWithData:(NSData *)data {
     
     NSInteger tag= [KTImageData indexToTag:_currentIndex];
@@ -262,4 +292,5 @@
 
     
 }
+
 @end

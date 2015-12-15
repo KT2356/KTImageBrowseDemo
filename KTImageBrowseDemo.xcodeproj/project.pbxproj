@@ -12,7 +12,7 @@
 		681345F11BAFFD9C00FF8887 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 681345EF1BAFFD9C00FF8887 /* LaunchScreen.xib */; };
 		681345FD1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 681345FC1BAFFD9C00FF8887 /* KTImageBrowseDemoTests.m */; };
 		681346201BAFFE2800FF8887 /* appIcon60.png in Resources */ = {isa = PBXBuildFile; fileRef = 6813460B1BAFFE2800FF8887 /* appIcon60.png */; };
-		687466D81BD47716004C309D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687466D71BD47716004C309D /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		687466D81BD47716004C309D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 687466D71BD47716004C309D /* Images.xcassets */; };
 		68BF03B01BD0F38100825F0F /* KTBrowseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460D1BAFFE2800FF8887 /* KTBrowseViewController.m */; };
 		68BF03B11BD0F38100825F0F /* KTDownloadPicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6813460F1BAFFE2800FF8887 /* KTDownloadPicViewController.m */; };
 		68BF03B21BD0F38100825F0F /* KTImageData.m in Sources */ = {isa = PBXBuildFile; fileRef = 681346111BAFFE2800FF8887 /* KTImageData.m */; };
@@ -211,6 +211,7 @@
 				681345DA1BAFFD9C00FF8887 /* Frameworks */,
 				681345DB1BAFFD9C00FF8887 /* Resources */,
 				3C56EBF80DC048CEDFB75678 /* Copy Pods Resources */,
+				E008F7DA62EFD09D74401C8A /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,6 +327,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E008F7DA62EFD09D74401C8A /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
