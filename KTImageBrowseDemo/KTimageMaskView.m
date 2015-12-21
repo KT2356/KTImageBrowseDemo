@@ -157,11 +157,15 @@
 
 #pragma mark - action response
 - (void)savePictureButtonClick {
-    [self.maskViewDelegate saveButtonDidClicked];
+    if ([self.maskViewDelegate respondsToSelector:@selector(saveButtonDidClicked)]) {
+        [self.maskViewDelegate saveButtonDidClicked];
+    }
 }
 
 - (void)originPictureButtonClick {
-    [self.maskViewDelegate originPicButtonDidClicked];
+    if ([self.maskViewDelegate respondsToSelector:@selector(originPictureButtonClick)]) {
+        [self.maskViewDelegate originPicButtonDidClicked];
+    }
 }
 
 
